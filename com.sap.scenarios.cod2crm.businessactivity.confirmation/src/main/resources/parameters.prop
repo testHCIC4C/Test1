@@ -5,5 +5,5 @@ CRM_enableBasicAuthentication_5=0
 COD_address_2=/COD/CRM/BUSINESSACTIVITY_CONFIRMATION
 COD_wsdlURL_1=/wsdl/Service.wsdl
 client=093
-Host=w4cdev333.bose.com
+Host=w4cdev444.bose.com
 Port=443
