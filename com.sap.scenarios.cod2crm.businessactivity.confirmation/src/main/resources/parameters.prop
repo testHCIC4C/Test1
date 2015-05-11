@@ -1,0 +1,9 @@
+#Parameter data and values
+#Wed Apr 22 11:16:29 EDT 2015
+artifactname=dummy
+CRM_enableBasicAuthentication_5=0
+COD_address_2=/COD/CRM/BUSINESSACTIVITY_CONFIRMATION
+COD_wsdlURL_1=/wsdl/Service.wsdl
+client=093
+Host=w4cdev1.bose.com
+Port=443

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ifl="http:///com.sap.ifl.model/Ifl.xsd" id="Definitions_1" name="Definitions 1">
+  <bpmn2:extensionElements>
+    <ifl:property>
+      <key>IntegrationFlowVersion</key>
+      <value>1.0</value>
+    </ifl:property>
+  </bpmn2:extensionElements>
+  <bpmn2:collaboration id="Collaboration_1" name="Default Collaboration">
+    <bpmn2:extensionElements>
+      <ifl:property>
+        <key>routeid</key>
+        <value>com.sap.scenarios.cod2crm.businessactivity.confirmation</value>
+      </ifl:property>
+      <ifl:property>
+        <key>allowedHeaderList</key>
+        <value></value>
+      </ifl:property>
+      <ifl:property>
+        <key>privateKeyAlias</key>
+        <value></value>
+      </ifl:property>
+      <ifl:property>
+        <key>traceLevel</key>
+        <value></value>
+      </ifl:property>
+      <ifl:property>
+        <key>ServerTrace</key>
+        <value>false</value>
+      </ifl:property>
+      <ifl:property>
+        <key>namespaceMapping</key>
+        <value></value>
+      </ifl:property>
+      <ifl:property>
+        <key>errorStrategy</key>
+        <value>Retry On Error</value>
+      </ifl:property>
+      <ifl:property>
+        <key>log</key>
+        <value>All events</value>
+      </ifl:property>
+    </bpmn2:extensionElements>
+    <bpmn2:documentation id="Documentation_1428571478890">Business Activity Replication to External System</bpmn2:documentation>
+    <bpmn2:participant id="Participant_1" ifl:type="EndpointSender" name="COD">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>role</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>enableBasicAuthentication</key>
+          <value>false</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ifl:type</key>
+          <value>EndpointSender</value>
+        </ifl:property>
+        <ifl:property>
+          <key>subject0</key>
+          <value>cn=m000000000740175062,ou=i000000000740175062 - businessbydesign,o=sap trust community,c=de</value>
+        </ifl:property>
+        <ifl:property>
+          <key>issuer0</key>
+          <value>cn=sap passport ca,o=sap trust community,c=de</value>
+        </ifl:property>
+        <ifl:property>
+          <key>subject1</key>
+          <value>cn=crmdev.bose.com,o=bose corporation,l=framingham,st=massachusetts,c=us</value>
+        </ifl:property>
+        <ifl:property>
+          <key>issuer1</key>
+          <value>cn=entrust certification authority - l1k,ou=(c) 2012 entrust\, inc. - for authorized use only,ou=see www.entrust.net/legal-terms,o=entrust\, inc.,c=us</value>
+        </ifl:property>
+        <ifl:property>
+          <key>subject2</key>
+          <value>cn=cybertrust sureserver standard validation ca,o=cybertrust inc</value>
+        </ifl:property>
+        <ifl:property>
+          <key>issuer2</key>
+          <value>cn=gte cybertrust global root,ou=gte cybertrust solutions\, inc.,o=gte corporation,c=us</value>
+        </ifl:property>
+        <ifl:property>
+          <key>subject3</key>
+          <value>cn=*.crm.ondemand.com,ou=sap cloud managed services,o=sap ag,l=walldorf,st=baden-wuerttemberg,c=de</value>
+        </ifl:property>
+        <ifl:property>
+          <key>issuer3</key>
+          <value>cn=cybertrust sureserver standard validation ca,o=cybertrust inc</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+    </bpmn2:participant>
+    <bpmn2:participant id="Participant_3" ifl:type="IntegrationProcess" name="Integration Process" processRef="Process_1"/>
+    <bpmn2:participant id="Participant_2" ifl:type="EndpointRecevier" name="CRM">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>role</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>ifl:type</key>
+          <value>EndpointRecevier</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+    </bpmn2:participant>
+    <bpmn2:messageFlow id="MessageFlow_1" name="" sourceRef="Participant_1" targetRef="StartEvent_1">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>Name</key>
+          <value>COD_BusinessActivity_Confirmation</value>
+        </ifl:property>
+        <ifl:property>
+          <key>Description</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentType</key>
+          <value>SOAP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentNS</key>
+          <value>http://sap.com/xi/XI/System</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentSWCVId</key>
+          <value>7e9a3ca782ab11dfb3adf6750a424100</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentSWCVName</key>
+          <value>SAP BASIS 7.31</value>
+        </ifl:property>
+        <ifl:property>
+          <key>TransportProtocol</key>
+          <value>HTTP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>TransportProtocolVersion</key>
+          <value>1.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>MessageProtocol</key>
+          <value>Plain SOAP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>MessageProtocolVersion</key>
+          <value>1.2</value>
+        </ifl:property>
+        <ifl:property>
+          <key>address</key>
+          <value>{{COD_address_2}}</value>
+        </ifl:property>
+        <ifl:property>
+          <key>wsdlURL</key>
+          <value>{{COD_wsdlURL_1}}</value>
+        </ifl:property>
+        <ifl:property>
+          <key>cxfOnewayRobust</key>
+          <value>1</value>
+        </ifl:property>
+        <ifl:property>
+          <key>CompressMessage</key>
+          <value>0</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+    </bpmn2:messageFlow>
+    <bpmn2:messageFlow id="MessageFlow_2" name="" sourceRef="EndEvent_1" targetRef="Participant_2">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>Name</key>
+          <value>COD_BusinessActivity_Confirmation</value>
+        </ifl:property>
+        <ifl:property>
+          <key>Description</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentType</key>
+          <value>IDOC</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentNS</key>
+          <value>http://sap.com/xi/XI/System</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentSWCVId</key>
+          <value>9d7fb4c0e30811df9a25d3a10a42301e</value>
+        </ifl:property>
+        <ifl:property>
+          <key>ComponentSWCVName</key>
+          <value>SAP BASIS 7.31</value>
+        </ifl:property>
+        <ifl:property>
+          <key>TransportProtocol</key>
+          <value>HTTP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>TransportProtocolVersion</key>
+          <value>1.0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>MessageProtocol</key>
+          <value>IDoc SOAP</value>
+        </ifl:property>
+        <ifl:property>
+          <key>MessageProtocolVersion</key>
+          <value>1.2</value>
+        </ifl:property>
+        <ifl:property>
+          <key>address</key>
+          <value>https://{{Host}}:{{Port}}/sap/bc/srt/idoc?sap-client={{client}}</value>
+        </ifl:property>
+        <ifl:property>
+          <key>wsdlURL</key>
+          <value></value>
+        </ifl:property>
+        <ifl:property>
+          <key>CompressMessage</key>
+          <value>0</value>
+        </ifl:property>
+        <ifl:property>
+          <key>allowChunking</key>
+          <value>1</value>
+        </ifl:property>
+        <ifl:property>
+          <key>enableBasicAuthentication</key>
+          <value>{{CRM_enableBasicAuthentication_5}}</value>
+        </ifl:property>
+        <ifl:property>
+          <key>IDocContentType</key>
+          <value>application/x-sap.idoc</value>
+        </ifl:property>
+        <ifl:property>
+          <key>requestTimeout</key>
+          <value>60000</value>
+        </ifl:property>
+        <ifl:property>
+          <key>credentialName</key>
+          <value>{{artifactname}}</value>
+        </ifl:property>
+        <ifl:property>
+          <key>privateKeyAlias</key>
+          <value></value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+    </bpmn2:messageFlow>
+  </bpmn2:collaboration>
+  <bpmn2:partnerRole id="_PartnerRole_2" name="System">
+    <bpmn2:participantRef>Participant_1</bpmn2:participantRef>
+  </bpmn2:partnerRole>
+  <bpmn2:process id="Process_1" name="Integration Process">
+    <bpmn2:extensionElements/>
+    <bpmn2:startEvent id="StartEvent_1" name="Start">
+      <bpmn2:extensionElements/>
+      <bpmn2:outgoing>SequenceFlow_4</bpmn2:outgoing>
+      <bpmn2:messageEventDefinition id="MessageEventDefinition_1"/>
+    </bpmn2:startEvent>
+    <bpmn2:endEvent id="EndEvent_1" name="End">
+      <bpmn2:extensionElements/>
+      <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
+      <bpmn2:messageEventDefinition id="MessageEventDefinition_2"/>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_4" name="" sourceRef="StartEvent_1" targetRef="CallActivity_1">
+      <bpmn2:extensionElements/>
+    </bpmn2:sequenceFlow>
+    <bpmn2:callActivity id="CallActivity_1" name="Mapping">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>activityType</key>
+          <value>Mapping</value>
+        </ifl:property>
+        <ifl:property>
+          <key>mappinguri</key>
+          <value>dir://mmap/src/main/resources/mapping/COD_CRM_Activity_Confirmation.mmap</value>
+        </ifl:property>
+        <ifl:property>
+          <key>mappingname</key>
+          <value>COD_CRM_Activity_Confirmation</value>
+        </ifl:property>
+        <ifl:property>
+          <key>mappingpath</key>
+          <value>src/main/resources/mapping/COD_CRM_Activity_Confirmation</value>
+        </ifl:property>
+        <ifl:property>
+          <key>bundle-name</key>
+          <value></value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
+    </bpmn2:callActivity>
+    <bpmn2:sequenceFlow id="SequenceFlow_2" name="" sourceRef="CallActivity_1" targetRef="CallActivity_2">
+      <bpmn2:extensionElements/>
+    </bpmn2:sequenceFlow>
+    <bpmn2:callActivity id="CallActivity_2" name="Splitter">
+      <bpmn2:extensionElements>
+        <ifl:property>
+          <key>activityType</key>
+          <value>Splitter</value>
+        </ifl:property>
+        <ifl:property>
+          <key>splitType</key>
+          <value>IDoc</value>
+        </ifl:property>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_3</bpmn2:outgoing>
+    </bpmn2:callActivity>
+    <bpmn2:sequenceFlow id="SequenceFlow_3" name="" sourceRef="CallActivity_2" targetRef="EndEvent_1">
+      <bpmn2:extensionElements/>
+    </bpmn2:sequenceFlow>
+  </bpmn2:process>
+  <bpmn2:partnerRole id="_PartnerRole_3" name="System">
+    <bpmn2:participantRef>Participant_2</bpmn2:participantRef>
+  </bpmn2:partnerRole>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1" name="Default Collaboration Diagram">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1">
+      <bpmndi:BPMNShape id="BPMNShape_Participant_1" bpmnElement="Participant_1">
+        <dc:Bounds height="140.0" width="100.0" x="40.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Participant_2" bpmnElement="Participant_2">
+        <dc:Bounds height="140.0" width="100.0" x="900.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Participant_3" bpmnElement="Participant_3">
+        <dc:Bounds height="220.0" width="540.0" x="250.0" y="60.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="StartEvent_1">
+        <dc:Bounds height="51.0" width="36.0" x="270.0" y="150.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
+        <dc:Bounds height="51.0" width="36.0" x="736.0" y="150.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_CallActivity_1" bpmnElement="CallActivity_1" isExpanded="true">
+        <dc:Bounds height="60.0" width="100.0" x="400.0" y="141.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_CallActivity_2" bpmnElement="CallActivity_2" isExpanded="true">
+        <dc:Bounds height="60.0" width="100.0" x="560.0" y="141.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_MessageFlow_1" bpmnElement="MessageFlow_1" sourceElement="BPMNShape_Participant_1" targetElement="BPMNShape_StartEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="140.0" y="170.0"/>
+        <di:waypoint xsi:type="dc:Point" x="270.0" y="168.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_MessageFlow_2" bpmnElement="MessageFlow_2" sourceElement="BPMNShape_EndEvent_1" targetElement="BPMNShape_Participant_2">
+        <di:waypoint xsi:type="dc:Point" x="772.0" y="168.0"/>
+        <di:waypoint xsi:type="dc:Point" x="900.0" y="170.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_CallActivity_2">
+        <di:waypoint xsi:type="dc:Point" x="500.0" y="171.0"/>
+        <di:waypoint xsi:type="dc:Point" x="560.0" y="171.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_CallActivity_2" targetElement="BPMNShape_EndEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="660.0" y="171.0"/>
+        <di:waypoint xsi:type="dc:Point" x="736.0" y="168.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="SequenceFlow_4" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_CallActivity_1">
+        <di:waypoint xsi:type="dc:Point" x="306.0" y="168.0"/>
+        <di:waypoint xsi:type="dc:Point" x="400.0" y="171.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
